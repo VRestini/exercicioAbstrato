@@ -66,4 +66,9 @@ public class GerenciadorDespesas {
     public void analisarDespesas(Despesa despesa ){
 
     }
+    // Scanner leitorTexto = new Scanner
+    //String nome = leitorTexto.next(); our nextLine(); our nextInt our nextString();
+    // Scanner leitor numero = new scanner(System.in);
+    // leitorTexto.close();
+
 }
