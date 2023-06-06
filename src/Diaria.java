@@ -10,12 +10,14 @@ public class Diaria extends Despesa{
     }
 
     @Override
-    public void calcularDespesa() {
-
+    public void calcularDespesa(double qtdeDiaria, double pedSc, double diarias) {
+        qtdeDiaria = diarias;
+        valorTotal = qtdeDiaria * 50;
     }
+
 
     @Override
     public void listarDespesa() {
-
+        System.out.println(valorTotal + qtdeDiaria);
     }
 }

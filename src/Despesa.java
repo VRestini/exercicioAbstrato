@@ -1,6 +1,6 @@
 public abstract class Despesa {
     private String descricao;
-    private double valorTotal;
+    protected double valorTotal;
 
     public String getDescricao() {
         return descricao;
@@ -19,9 +19,11 @@ public abstract class Despesa {
     }
 
     public void cadastrarDespesa(){
-
+        setDescricao(descricao);
+        valorTotal = 0;
     }
-    public abstract void calcularDespesa();
+    protected abstract void calcularDespesa(double qtdRefeicoes, double pedSc, double diarias);
+
     public abstract void listarDespesa();
 
 

@@ -19,12 +19,14 @@ public class Transporte extends Despesa{
     }
 
     @Override
-    public void calcularDespesa() {
-
+    public void calcularDespesa(double kmSc, double pedSc, double diaria) {
+        kmPercorrida = kmSc;
+        valorPedagios = pedSc;
+        valorTotal = (kmPercorrida * 3) + valorPedagios;
     }
 
     @Override
     public void listarDespesa() {
-
+        System.out.println(kmPercorrida + valorPedagios + valorTotal);
     }
 }
