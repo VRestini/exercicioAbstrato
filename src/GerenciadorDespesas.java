@@ -7,6 +7,26 @@ public class GerenciadorDespesas {
     private double totalDiaria;
     private double totalDespesas;
 
+    public void analisarDespesa(Despesa despesa){
+        if (despesa instanceof Alimentacao){
+            Alimentacao alimentacao = (Alimentacao) despesa;
+            totalAlimentacao += alimentacao.getValorTotal();
+            qtdeAlimentacao = qtdeAlimentacao + 1;
+        }
+        else if(despesa instanceof Transporte) {
+            Transporte transporte = (Transporte) despesa;
+            totalTransporte += transporte.getValorTotal();
+            qtdeTransporte = qtdeTransporte + 1;
+        }
+        else if (despesa instanceof Diaria){
+            Diaria diaria = (Diaria) despesa;
+            totalDiaria += diaria.getValorTotal();
+            qtdeDiaria++;
+        }
+        totalDespesas += despesa.getValorTotal();
+
+    }
+
     public int getQtdeAlimentacao() {
         return qtdeAlimentacao;
     }
@@ -65,6 +85,16 @@ public class GerenciadorDespesas {
 
     public void analisarDespesas(Despesa despesa ){
 
+    }
+    
+    public void listarDespesas() {
+            System.out.println("Quantidade de despesas de Alimentação:" + qtdeAlimentacao);
+            System.out.println("Total Alimentação: " + totalAlimentacao);
+            System.out.println("Quantidade despesas de Transporte: " + qtdeTransporte);
+            System.out.println("Total Transporte: " + totalTransporte);
+            System.out.println("Quantidade de despesas Diária: " + qtdeDiaria);
+            System.out.println("Total Diária: " + totalDiaria);
+            System.out.println("Total geral de despesas: " + totalDespesas);
     }
     // Scanner leitorTexto = new Scanner
     //String nome = leitorTexto.next(); our nextLine(); our nextInt our nextString();

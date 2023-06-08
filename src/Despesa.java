@@ -1,5 +1,7 @@
+import java.util.Scanner;
+
 public abstract class Despesa {
-    private String descricao;
+    protected String descricao;
     protected double valorTotal;
 
     public String getDescricao() {
@@ -19,10 +21,12 @@ public abstract class Despesa {
     }
 
     public void cadastrarDespesa(){
-        setDescricao(descricao);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite a descrição da despesa: ");
+        descricao = sc.nextLine();
         valorTotal = 0;
     }
-    protected abstract void calcularDespesa(double qtdRefeicoes, double pedSc, double diarias);
+    public abstract void calcularDespesa();
 
     public abstract void listarDespesa();
 

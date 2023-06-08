@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Transporte extends Despesa{
     private double kmPercorrida;
     private double valorPedagios;
@@ -18,15 +19,28 @@ public class Transporte extends Despesa{
         this.valorPedagios = valorPedagios;
     }
 
+
     @Override
-    public void calcularDespesa(double kmSc, double pedSc, double diaria) {
-        kmPercorrida = kmSc;
-        valorPedagios = pedSc;
+    public void calcularDespesa() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a descrição da despesa: ");
+        descricao = sc.nextLine();
+
+        System.out.print("Digite a quilometragem percorrida: ");
+        kmPercorrida = sc.nextDouble();
+
+        System.out.print("Digite o valor gasto com pedágios: ");
+        valorPedagios = sc.nextDouble();
+
         valorTotal = (kmPercorrida * 3) + valorPedagios;
     }
 
     @Override
     public void listarDespesa() {
-        System.out.println(kmPercorrida + valorPedagios + valorTotal);
+
+        System.out.println("A descrição é: " + descricao + "\n O valor total é:" + valorTotal + "\nA quantidade de quilometros percorrida foi:" + kmPercorrida + "\n O valor total gasto com pedágios foi:" + valorPedagios);
+
     }
 }
+
